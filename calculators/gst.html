@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Indian GST Calculator</title>
+    <style>
+      body {
+        padding: 25px;
+      }
+      .title {
+        color: #5c6ac4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Indian GST Calculator</h1>
+    <p>Enter the amount and select the GST slab:</p>
+    <form>
+      Amount: <input type="number" id="amount" /><br />
+      <input type="radio" name="slab" value="0" /> 0%<br />
+      <input type="radio" name="slab" value="5" /> 5%<br />
+      <input type="radio" name="slab" value="12" /> 12%<br />
+      <input type="radio" name="slab" value="18" /> 18%<br />
+      <input type="radio" name="slab" value="28" /> 28%<br />
+      <br />
+      <label for="inclusive">Inclusive</label>
+      <input type="checkbox" id="inclusive" name="inclusive" /><br />
+      <br />
+      <button type="button" onclick="calculateGST()">Calculate GST</button>
+    </form>
+    <br />
+    <p>GST: <span id="result"></span></p>
+    <p>Total: <span id="total"></span></p>
+
+    <script>
+      function calculateGST() {
+        var amount = document.getElementById("amount").value;
+        var slab = document.querySelector('input[name="slab"]:checked').value;
+        var inclusive = document.getElementById("inclusive").checked;
+        var result = (amount / 100) * slab;
+        var total = 0;
+
+        if (inclusive) {
+          total = amount - result;
+        } else {
+          total = Number(amount) + Number(result);
+        }
+
+        document.getElementById("result").innerHTML = result;
+        document.getElementById("total").innerHTML = total;
+      }
+
+      // other
+      function showTime() {
+        document.getElementById("currentTime").innerHTML =
+          new Date().toUTCString();
+      }
+      showTime();
+      setInterval(function () {
+        showTime();
+      }, 1000);
+    </script>
+  </body>
+</html>
