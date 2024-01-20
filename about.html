@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      /* navbar  strt */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+      .topnav {
+        overflow: hidden;
+        background-color: #000000;
+        display: block;
+      }
+
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #ffffff;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #0037ff;
+        color: rgb(255, 255, 255);
+      }
+
+      .topnav .icon {
+        display: none;
+
+        top: 10px;
+        right: 0;
+      }
+
+      @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {
+          display: none;
+        }
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {
+          position: relative;
+        }
+        .topnav.responsive .icon {
+          position: absolute;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+
+      /* navbar  end */
+
+
+      /* about us  */
+
+
+
+
+#aboutUs {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#aboutUs img {
+    width: 400px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.content {
+    margin: 20px 0;
+}
+
+.content h2 {
+    font-size: 50px;
+    color: #22a7ff;
+}
+
+.content h4 {
+    font-size: 20px;
+    color: #2828fc;
+    margin: 10px 0;
+}
+
+.description {
+    color: #000000;
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+.btn {
+    font-weight: bold;
+    border: 2px solid #1174f6;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.4s;
+    background-color: #1576f6;
+}
+
+.btn:hover {
+    border: 2px solid #0e2aff;
+    background: transparent;
+    color: #163dfe;
+}
+
+
+      </style>
+
+<head><body>
+ <div class="topnav" id="myTopnav">
+   <a href="about.html" class="active">About</a>
+      <a href="index.html" >Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+<section id="aboutUs">
+        <img src="contact.jpg
+        " alt="computer user">
+        <br>
+
+        <div class="content">
+
+            <h2>About Us</h2>
+            <h4> Developer & Designer </h4>
+            <p class="description">
+                I am a Front-end web developer. I can provide clean code and pixel perfect design. I also make the
+                website more & more interactive with web animations. I can provide clean code and pixel perfect. I also
+                make the website more & more interactive with web animations. A responsive design makes your website
+                accessible to all users. regardless of their device.
+            </p>
+            <button class="btn">Hire Me</button>
+        </div>
+    </section>
+
+    <script>
+      // navbar responaisve cd
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>
